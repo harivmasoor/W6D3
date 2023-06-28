@@ -66,3 +66,68 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 163)
 
 
+Started GET "/" for 127.0.0.1 at 2023-06-28 16:30:16 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/harimasoor/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/harimasoor/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 528)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 4563)
+
+
+Started GET "/users" for ::1 at 2023-06-28 16:31:01 -0700
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 587)
+
+
+Started GET "/users?fav_food=pizza" for ::1 at 2023-06-28 16:32:11 -0700
+Processing by UsersController#index as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 173)
+
+
+Started POST "/users?fav_food=pizza" for ::1 at 2023-06-28 16:32:56 -0700
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users?fav_food=pizza" for ::1 at 2023-06-28 16:34:50 -0700
+Processing by UsersController#create as */*
+  Parameters: {"fav_food"=>"pizza"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 253)
+
+
+Started GET "/users/2" for ::1 at 2023-06-28 16:35:53 -0700
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "/users/2" for ::1 at 2023-06-28 16:36:18 -0700
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started POST "/__better_errors/9faeaaf336662694/variables" for ::1 at 2023-06-28 16:36:18 -0700
+Started GET "/" for 127.0.0.1 at 2023-06-28 16:36:29 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/harimasoor/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/harimasoor/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 280)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 940)
+
+
+Started POST "/users/" for ::1 at 2023-06-28 16:37:18 -0700
+Processing by UsersController#create as */*
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 133)
+
+
+Started POST "/users/" for ::1 at 2023-06-28 16:38:15 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"'name'"=>"hari"}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 173)
+
+
+Started POST "/users/" for ::1 at 2023-06-28 16:38:49 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"hari", "dog"=>"border collie"}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 125)
+
+
