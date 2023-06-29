@@ -6,29 +6,28 @@ class ArtworkSharesController < ApplicationController
         art_created = user.artworks
         art_shared = user.shared_artworks
         render json: {"art_created" => art_created, "art_shared" => art_shared}
-      else 
+      else
         render json: "Artwork Shares for user not found", status: 404
       end
     end
-  
-    # def create
-    #   artwork_shares = ArtworkShare.new(artwork_params)
-    #   # replace the `artwork_attributes_here` with the actual attribute keys
-    #   if artwork.save
-    #     render json: artwork
-    #   else
-    #     render json: artwork.errors.full_messages, status: :unprocessable_entity
-    #   end
-    # end
-  
-    # def delete
-    #   artwork = Artwork.find_by(id: params[:id])
-    #   artwork.destroy
-    #   redirect_to artworks_url
-    # end
-  
-    # private
-    # def artwork_params
-    #   params.require(:artwork).permit(:title, :image_url, :artist_id)
-    # end
+
+    def create
+      artwork_share = ArtworkShare.new(artwork_share_params)
+      if artwork_share.save
+        render json: artwork_share
+      else
+        render json: artwork_share.errors.full_messages, status: :unprocessable_entity
+      end
+    end
+
+    def delete
+      artwork_share = ArtworkShare.find_by(id: params[:id])
+      artwork_share.destroy
+      render json: artwork_share
+    end
+
+    private
+    def artwork_share_params
+      params.require(:artwork_share).permit(:artwork_id, :viewer_id)
+    end
   end
