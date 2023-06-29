@@ -10,9 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_29_001102) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_29_002401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "art_works", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "image_url", null: false
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_art_works_on_artist_id"
+    t.index ["title", "artist_id"], name: "index_art_works_on_title_and_artist_id", unique: true
+  end
+
+  create_table "art_works_shares", force: :cascade do |t|
+    t.bigint "art_work_id", null: false
+    t.bigint "viewer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["art_work_id", "viewer_id"], name: "index_art_works_shares_on_art_work_id_and_viewer_id", unique: true
+    t.index ["art_work_id"], name: "index_art_works_shares_on_art_work_id"
+    t.index ["viewer_id"], name: "index_art_works_shares_on_viewer_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -21,4 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_001102) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "art_works", "users", column: "artist_id"
+  add_foreign_key "art_works_shares", "art_works"
+  add_foreign_key "art_works_shares", "users", column: "viewer_id"
 end
