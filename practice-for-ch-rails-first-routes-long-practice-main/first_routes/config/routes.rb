@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   get "/artwork_shares/:user_id", to: "artwork_shares#index", as: "artwork_shares"
   post "/artwork_shares", to: "artwork_shares#create"
   delete "/artwork_shares/:id", to: "artwork_shares#delete"
+
+  resources :users do
+    resources :artworks, only: [:index]
+  end
 end
