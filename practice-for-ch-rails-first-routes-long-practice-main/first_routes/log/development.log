@@ -131,3 +131,153 @@ Processing by UsersController#create as */*
 Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 125)
 
 
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7974280239715595190)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230628234343)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230628234343"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-28 23:44:41.084575"], ["updated_at", "2023-06-28 23:44:41.084575"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7974280239715595190)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hari"], ["email", "hair@google.com"], ["created_at", "2023-06-28 23:48:06.121146"], ["updated_at", "2023-06-28 23:48:06.121146"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Julio"], ["email", "julio@google.com"], ["created_at", "2023-06-28 23:48:24.711621"], ["updated_at", "2023-06-28 23:48:24.711621"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Steve"], ["email", "steve@google.com"], ["created_at", "2023-06-28 23:48:39.649323"], ["updated_at", "2023-06-28 23:48:39.649323"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joe"], ["email", "smo@google.com"], ["created_at", "2023-06-28 23:48:51.861411"], ["updated_at", "2023-06-28 23:48:51.861411"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jimmy"], ["email", "bigj@google.com"], ["created_at", "2023-06-28 23:49:06.138831"], ["updated_at", "2023-06-28 23:49:06.138831"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for ::1 at 2023-06-28 16:50:32 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 6.7ms | Allocations: 6474)
+
+
+Started GET "/users" for ::1 at 2023-06-28 16:50:57 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1235)
+
+
+Started GET "/users" for ::1 at 2023-06-28 16:51:59 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1144)
+
+
+Started POST "/users?user[name]=Taylor&user[email]=Swift" for ::1 at 2023-06-28 16:54:36 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Taylor", "email"=>"Swift"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Taylor"], ["email", "Swift"], ["created_at", "2023-06-28 23:54:36.753690"], ["updated_at", "2023-06-28 23:54:36.753690"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 5.7ms | Allocations: 5835)
+
+
+Started POST "/users/2" for ::1 at 2023-06-28 17:01:14 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started POST "/users/2" for ::1 at 2023-06-28 17:01:58 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started GET "/users/2" for ::1 at 2023-06-28 17:02:10 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+Completed 200 OK in 38ms (Views: 0.7ms | ActiveRecord: 8.4ms | Allocations: 8687)
+
+
+Started GET "/users/1" for ::1 at 2023-06-28 17:02:26 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 656)
+
+
+Started GET "/users/6" for ::1 at 2023-06-28 17:02:31 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 642)
+
+
+Started PATCH "/users/2?users[email]=juliofoolio@gmail.com" for ::1 at 2023-06-28 17:04:42 -0700
+Processing by UsersController#update as */*
+  Parameters: {"users"=>{"email"=>"juliofoolio@gmail.com"}, "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+Completed 400 Bad Request in 10ms (ActiveRecord: 6.3ms | Allocations: 4335)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user
+Did you mean?  users:
+  app/controllers/users_controller.rb:34:in `user_params'
+  app/controllers/users_controller.rb:25:in `update'
+
+Started PATCH "/users/2?user[email]=juliofoolio@gmail.com" for ::1 at 2023-06-28 17:05:03 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"email"=>"juliofoolio@gmail.com"}, "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "juliofoolio@gmail.com"], ["updated_at", "2023-06-29 00:05:03.270763"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 2.1ms | Allocations: 2873)
+
+
+Started DELETE "/users/1" for ::1 at 2023-06-28 17:06:24 -0700
+
+AbstractController::ActionNotFound - The action 'delete' could not be found for UsersController:
+
+Started DELETE "/users/1" for ::1 at 2023-06-28 17:06:55 -0700
+Processing by UsersController#delete as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `delete'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `delete'
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `delete'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `delete'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 11ms (ActiveRecord: 4.5ms | Allocations: 5543)
+
+
+Started GET "/users" for ::1 at 2023-06-28 17:06:55 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1288)
+
+
