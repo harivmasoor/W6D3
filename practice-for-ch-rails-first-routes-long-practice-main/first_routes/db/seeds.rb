@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
+Comment.destroy_all
 ArtworkShare.destroy_all
 Artwork.destroy_all
 User.destroy_all
@@ -13,6 +15,7 @@ User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('artworks')
 ActiveRecord::Base.connection.reset_pk_sequence!('artwork_shares')
+ActiveRecord::Base.connection.reset_pk_sequence!('comments')
 
 
 # Create a bunch of users
@@ -60,3 +63,8 @@ ArtworkShare.create(artwork_id: 9, viewer_id: 12)
 ArtworkShare.create(artwork_id: 10, viewer_id: 11)
 ArtworkShare.create(artwork_id: 11, viewer_id: 6)
 p "Finished creating objects"
+
+
+Comment.create(body: "JulioFulio's artwork is sensational", author_id: 2, artwork_id: 2)
+Comment.create(body:"TSwifty is a multifaceted star!", author_id: 2, artwork_id: 2)
+Comment.create(body: "MonaLisa Mona Lisa", author_id: 4, artwork_id: 5)
